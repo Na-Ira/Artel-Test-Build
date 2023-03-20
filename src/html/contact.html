@@ -1,0 +1,75 @@
+<!-- contact section -->
+<section class="contact">
+  <div class="contact__container-small">
+    <h3>Contact</h3>
+
+    <div class="contact-form-container" id="contactForm">
+      <form action="php/mail.php" method="post">
+        <div class="contact-form-field-item">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="John Doe"
+            class="contact-form-field"
+            required
+          />
+          <span id="error-name"></span>
+        </div>
+
+        <div class="contact-form-field-item">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="johndoe@gmail.com"
+            class="contact-form-field"
+            required
+          />
+          <span id="error-email"></span>
+        </div>
+
+        <div class="contact-form-field-item">
+          <label for="message">Your Message</label>
+          <textarea
+            name="message"
+            id="message"
+            rows="6"
+            placeholder="Tell us what you need and we’ll take care of the rest."
+            class="contact-form-field"
+            required
+          ></textarea>
+          <span id="error-mess" class="error"></span>
+        </div>
+
+        <div class="contact-form-submit" id="submitBlock">
+          <div class="contact-form-capcha" id="formCaptcha">
+            <span id="error-check" class="error"></span>
+            <input
+              class="contact-form-capcha_input"
+              type="checkbox"
+              name="checkbox"
+              id="checkField"
+              required
+            />
+            <label class="contact-form-capcha_label" for="checkField"></label>
+          </div>
+          <button
+            type="submit"
+            class="contact-form-button"
+            id="submit"
+            disabled
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="contact-messages">
+      <div class="error-message" id="errorMessage"></div>
+      <div class="success-message" id="successMessage"></div>
+    </div>
+  </div>
+</section>

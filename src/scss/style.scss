@@ -1,0 +1,688 @@
+@import "fonts";
+@import "normalize";
+@import "vendor";
+@import "mixins";
+
+$hero-person-photo-width-percentage: 284px;
+/*
+* ---------------------------------------------
+* 01.GENERAL CSS.
+* ---------------------------------------------
+*/
+*,
+::after,
+::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:hover {
+  transition: all 0.3s ease;
+}
+::placeholder {
+  color: var(--light-grey-color);
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: -0.0125rem;
+}
+:focus-visible {
+  outline: none;
+}
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+[type="button"],
+[type="reset"],
+[type="submit"],
+button {
+  appearance: button;
+}
+[type="email"] {
+  appearance: textfield;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--color-white) inset !important;
+  background-color: var(--color-white);
+}
+input,
+textarea {
+  margin: 0;
+}
+textarea {
+  resize: vertical;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  margin: auto;
+}
+label {
+  padding-bottom: 0.5rem;
+  padding-left: 0.25rem;
+  display: block;
+}
+body {
+  font-family: "Arial", sans-serif;
+  font-weight: 400;
+  color: var(--color-white);
+  font-size: 16px;
+  min-width: 320px;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  letter-spacing: normal;
+  line-height: 1.17;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1 1 auto;
+}
+.d-flex-inline {
+  display: inline-flex;
+}
+[class*="__container"] {
+  max-width: 84.5rem;
+  margin: auto;
+}
+[class*="__container-small"] {
+  max-width: 54.875rem;
+  margin: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.16;
+  margin: 0;
+}
+h1 {
+  font-size: 3.125rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+section {
+  padding: 0 1.5rem;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+.btn {
+  border-radius: 1.875rem;
+  font-weight: 400;
+  padding: 1.1563rem 2rem;
+  line-height: normal;
+  letter-spacing: 0.0563rem;
+  font-family: "Arial", sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+/*
+* ---------------------------------------------
+* 02.HEADER CSS.
+* ---------------------------------------------
+*/
+/*
+* ---------------------------------------------
+* 03.HERO CSS.
+* ---------------------------------------------
+*/
+.hero {
+  padding-top: 5rem;
+  padding-bottom: 1rem;
+  background: var(--green-bg);
+  & .hero__container {
+    & .swiper-slide {
+      & .hero__person {
+        margin: auto;
+        & .hero__person-social-links {
+          display: inline-grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1rem;
+          background: var(--lime-color);
+          border-radius: 1.875rem;
+          padding: 0.3125rem 1rem;
+          margin-bottom: 1rem;
+          & .hero__person-social-links_icon {
+            display: flex;
+            & img {
+              width: 22px;
+              height: 22px;
+            }
+          }
+        }
+        & .hero__person-photo {
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+          & .hero__person-photo-inner {
+            padding: 1rem;
+            display: block;
+            width: auto;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            background-size: contain;
+            & img {
+              display: block;
+              @include w-h-100;
+              object-position: center;
+              width: 100%;
+              max-width: $hero-person-photo-width-percentage;
+              height: 100%;
+              max-height: 428px;
+              object-fit: cover;
+            }
+          }
+        }
+        & .hero__person-text {
+          margin: 1rem auto 0;
+          text-align: center;
+          & .hero__person-text_name {
+            font-size: 1.5rem;
+            font-weight: 700;
+          }
+          & .hero__person-text_position {
+            font-weight: 400;
+            font-size: 1.125rem;
+            margin-top: 0.5rem;
+            padding-bottom: 1rem;
+          }
+        }
+      }
+      &:nth-child(4n + 1) {
+        & .hero__person-photo-inner {
+          background: url(../img/hero/background-1.svg) no-repeat center;
+        }
+      }
+      &:nth-child(4n + 2) {
+        & .hero__person-photo-inner {
+          background: url(../img/hero/background-2.svg) no-repeat center;
+        }
+      }
+      &:nth-child(4n + 3) {
+        & .hero__person-photo-inner {
+          background: url(../img/hero/background-3.svg) no-repeat center;
+        }
+      }
+      &:nth-child(4n + 4) {
+        & .hero__person-photo-inner {
+          background: url(../img/hero/background-4.svg) no-repeat center;
+        }
+      }
+    }
+  }
+  // Swiper Slider
+  & .swiper-slider-container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 3rem;
+    &.swiper-3d {
+      & .swiper-slide-shadow-left,
+      & .swiper-slide-shadow-right {
+        border-radius: 1rem !important;
+      }
+    }
+    & .swiper-pagination-bullet-active,
+    & .swiper-pagination-bullet {
+      background: var(--lime-color);
+    }
+  }
+}
+
+/*
+* ---------------------------------------------
+* 04.ABOUT CSS.
+* ---------------------------------------------
+*/
+.about {
+  background-color: var(--rose-bg);
+  & .about__container {
+    padding: 2.375rem 0;
+    display: grid;
+    gap: 1.5rem;
+    & .about__card {
+      position: relative;
+      z-index: 1;
+      background: #780d1a;
+      border-radius: 0.9375rem;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        @include w-h-0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+      &::before {
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 34px solid var(--rose-bg);
+        top: 0;
+      }
+      &::after {
+        bottom: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-bottom: 34px solid var(--rose-bg);
+      }
+      & .about__card-decor {
+        position: relative;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          @include w-h-0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+        }
+        &::before {
+          border-top: 20px solid transparent;
+          border-bottom: 20px solid transparent;
+          border-left: 34px solid var(--rose-bg);
+          left: 0;
+        }
+        &::after {
+          right: 0;
+          border-top: 20px solid transparent;
+          border-bottom: 20px solid transparent;
+          border-right: 34px solid var(--rose-bg);
+        }
+      }
+      & .about__card-container {
+        padding: 4.25rem 2.9375rem 0;
+        & h1 {
+          padding-bottom: 1.875rem;
+          border-bottom: 1px solid;
+        }
+        & p {
+          color: rgba($color: #ffffff, $alpha: 0.8);
+          &:first-of-type {
+            padding-bottom: 1rem;
+            margin-top: 2rem;
+          }
+        }
+        & .about__card-link {
+          background: var(--rose-bg);
+          color: var(--color-black);
+          font-style: italic;
+          margin-top: 1rem;
+          margin-bottom: 10.3125rem;
+          &:hover {
+            background: #e56487;
+          }
+        }
+      }
+    }
+    & .about__pic {
+      position: relative;
+      margin: auto;
+      & .mill {
+        @include max-w-h-100;
+        height: 100%;
+      }
+      & .blade-mill {
+        animation: millRoute 5s linear infinite normal;
+        & .blade-mill-route {
+          transform: translate(-278.25px, -266.25px);
+        }
+      }
+    }
+  }
+}
+
+/*
+* ---------------------------------------------
+* 05.CONTACT CSS.
+* ---------------------------------------------
+*/
+.contact {
+  background-color: var(--lite-green-bg);
+  color: var(--grey-color);
+  & .contact__container-small {
+    padding: 5rem 0 2rem;
+    & h3 {
+      text-align: center;
+      font-weight: 700;
+    }
+    & .contact-form-container {
+      font-family: "Lato", sans-serif;
+      @include d-flex-col;
+      & .contact-form-field {
+        background-color: var(--color-white);
+        @include input-textarea;
+        &:-internal-autofill-selected {
+          background-color: var(--color-white);
+        }
+      }
+      & .contact-form-field-item {
+        &:not(:last-child) {
+          margin-bottom: 1.75rem;
+        }
+        &:is(:last-child) {
+          margin-bottom: 1.25rem;
+        }
+      }
+      & .contact-form-submit {
+        @include d-flex;
+        justify-content: flex-end;
+        align-items: center;
+        & .contact-form-button {
+          @include button;
+          @include success;
+        }
+        & .contact-form-capcha {
+          margin-right: 0.625rem;
+          display: inline-flex;
+          overflow: hidden;
+        }
+      }
+      // chekbox
+      & .contact-form-capcha {
+        &_input {
+          display: none;
+          overflow: hidden;
+        }
+        &_label {
+          max-width: 212px;
+          max-height: 57px;
+          min-width: 212px;
+          min-height: 57px;
+          background: url(../img/contact/capcha.svg) no-repeat center;
+          background-size: cover;
+          display: inline-flex;
+          padding: 0;
+          outline: none;
+          border: none;
+          cursor: pointer;
+        }
+        &_input:checked + label {
+          background: url(../img/contact/capcha-checked.svg) no-repeat center;
+          background-size: cover;
+          overflow: hidden;
+          border: none;
+          outline: none;
+        }
+        &[data-fields="incorrect"] {
+          & .contact-form-capcha_label,
+          & .contact-form-capcha_input:checked + .contact-form-capcha_label {
+            background: url(../img/contact/capcha.svg) no-repeat center;
+            background-size: cover;
+          }
+        }
+      }
+
+      // error
+      [id^="error-"] {
+        font-family: "Helvetica", sans-serif;
+        color: var(--red-color);
+        font-size: 0.8125rem;
+        letter-spacing: 0.0081rem;
+      }
+      & #error-check {
+        display: inline-flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0 1rem;
+      }
+      & [data-status="error"] > label {
+        color: var(--red-color);
+      }
+      & [data-status="error"] > .contact-form-field {
+        &:focus {
+          border-color: var(--red-color);
+        }
+      }
+      & [data-status="success"] > .contact-form-field {
+        color: var(--success) !important;
+        &:focus {
+          color: var(--success) !important;
+        }
+        &:-webkit-autofill {
+          -webkit-text-fill-color: var(--success) !important;
+        }
+      }
+      & .contact-form-field {
+        &[data-invalid="incorrect"] {
+          color: var(--red-color);
+        }
+      }
+    }
+    & .contact-messages {
+      @include d-flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-top: 3.25rem;
+      font-family: "Helvetica", sans-serif;
+      & [class*="message"] {
+        & p {
+          font-size: 0.8125rem;
+          letter-spacing: 0.0081rem;
+        }
+      }
+      & [class^="error"] {
+        color: var(--red-color);
+      }
+      & [class^="success"] {
+        color: var(--success);
+      }
+    }
+  }
+}
+/*
+* ---------------------------------------------
+* 06.FOOTER CSS.
+* ---------------------------------------------
+*/
+
+/*
+* ---------------------------------------------
+* 07.INNER PAGE
+* ---------------------------------------------
+*/
+.content-page {
+  background-color: var(--lime-color);
+  min-height: 100vh;
+  color: var(--color-black);
+  @include d-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  & .content-page__send-message {
+    text-align: center;
+    & h4 {
+      padding-top: 2rem;
+    }
+    & .button {
+      @include button;
+      margin-top: 2rem;
+      background-color: var(--success-hover);
+    }
+  }
+}
+
+/*
+* ---------------------------------------------
+* KEYFRAMES
+* ---------------------------------------------
+*/
+@keyframes millRoute {
+  from {
+    transform: translate(278.25px, 266.25px) rotate(0deg);
+  }
+  to {
+    transform: translate(278.25px, 266.25px) rotate(360deg);
+  }
+}
+/*
+* ---------------------------------------------
+* SUPPORTS
+* ---------------------------------------------
+*/
+@supports (-webkit-mask-image: url(../img/hero/mask.png)) or
+  (mask-image: url(../img/hero/mask.png)) {
+  .hero__person-photo-inner {
+    & img {
+      mask-image: url(../img/hero/mask.png);
+      -webkit-mask-image: url(../img/hero/mask.png);
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+    }
+  }
+}
+
+/*
+* ---------------------------------------------
+* RESPONSIVE
+* ---------------------------------------------
+*/
+@media (min-width: 526px) and (max-width: 767px) {
+  .hero {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (min-width: 576px) {
+  ::placeholder {
+    font-size: 1.125rem;
+  }
+  .btn {
+    padding: 1.1563rem 4.5rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 5.125rem;
+  }
+  h3 {
+    font-size: 3rem;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  .about {
+    & .about__container {
+      & .about__card {
+        & .about__card-container {
+          & p {
+            font-size: 1.3125rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1400px) {
+  .hero {
+    & .hero__container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5rem;
+    }
+    & .swiper-pagination {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .contact {
+    & .contact__container-small {
+      & .contact-form-container {
+        & .contact-form-submit {
+          flex-direction: column;
+          align-items: flex-start;
+          & .contact-form-capcha {
+            margin: 0 0 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 479px) {
+  .hero {
+    & .hero__container {
+      & .swiper-slide {
+        & .hero__person {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    & .contact__container-small {
+      & .contact-form-container {
+        & #error-check {
+          padding: 0;
+          position: absolute;
+          top: -1.7rem;
+          left: 0;
+        }
+        & .contact-form-submit {
+          @include d-grid;
+          gap: 1rem;
+          justify-content: flex-start;
+          position: relative;
+          & .contact-form-capcha {
+            @include d-flex;
+            margin: 0;
+            flex-direction: column;
+          }
+        }
+        & .contact-form-field-item {
+          &:nth-child(3) {
+            margin-bottom: 2.3rem;
+          }
+        }
+      }
+      & .contact-messages {
+        align-items: flex-start;
+      }
+    }
+  }
+}
