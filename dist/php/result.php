@@ -5,7 +5,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Artsel Test Assignment || Email Success</title>
-  <link rel="stylesheet" href="css/style.min.css?_v=20230321013220" />
+  <!-- ##### favicon ##### -->
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/img/favicon32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="/img/favicon16x16.png"
+  />
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.min.css?_v=20230321025522" />
 </head>
 
 <body>
@@ -29,7 +43,7 @@
 
    </div>
 
-   <script src="../js/app.min.js?_v=20230321013220"></script>
+   <script src="../js/app.min.js?_v=20230321025522"></script>
 </body>
 
 </html>

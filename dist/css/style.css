@@ -1249,9 +1249,13 @@ p {
 */
 
 .hero {
-  padding-top: 5rem;
+  padding-top: 4rem;
   padding-bottom: 1rem;
   background: var(--green-bg);
+}
+
+.hero .hero__container {
+  padding-top: 1rem;
 }
 
 .hero .hero__container .swiper-slide .hero__person {

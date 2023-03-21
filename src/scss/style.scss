@@ -154,10 +154,11 @@ p {
 * ---------------------------------------------
 */
 .hero {
-  padding-top: 5rem;
+  padding-top: 4rem;
   padding-bottom: 1rem;
   background: var(--green-bg);
   & .hero__container {
+    padding-top: 1rem;
     & .swiper-slide {
       & .hero__person {
         margin: auto;
